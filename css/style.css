@@ -1,8 +1,13 @@
-.logo__icon {
-  height: 24px;
-  width: 177px;
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
-.search__icon {
-  height: 16px;
-  width: 16px;
+
+body {
+  font-family: 'Mulish', sans-serif;
 }
+
+.header {
+  color: #000;
+}
+/*# sourceMappingURL=style.css.map */
