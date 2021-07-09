@@ -736,7 +736,7 @@ template {
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 610px) {
   .container {
     width: 88%;
   }
