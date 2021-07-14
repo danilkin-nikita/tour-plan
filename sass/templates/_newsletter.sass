@@ -1,20 +1,27 @@
 .newsletter
   position: relative
   padding: 98px 0 87px 0
-  background-image: url(../img/newsletter-bg.jpeg)
-  background-position: center
-  background-repeat: no-repeat
-  background-size: cover
-  &::before
-    content: ''
+  overflow: hidden
+  &__bg
     position: absolute
-    top: 0
-    left: 0
-    right: 0
     bottom: 0
+    right: 0
+    background-image: url(../img/newsletter-bg.jpeg)
+    background-position: center
+    background-repeat: no-repeat
+    background-size: cover
     width: 100%
     height: 100%
-    background-color: rgba($dark, 0.8)
+    &::before
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      width: 100%
+      height: 100%
+      background-color: rgba($dark, 0.8)
   &-wrapper
     position: relative
     display: flex
@@ -31,7 +38,7 @@
     font-weight: 300
     font-size: 24px
     line-height: 30px
-    &--strong
+    &__strong
       font-weight: 600
       font-size: 36px
       line-height: 45px
@@ -63,3 +70,7 @@
     color: $light
     font-size: 12px
     line-height: 15px
+    cursor: pointer
+    &:hover
+      background-color: $hoverPrimary
+      transition: 0.2s

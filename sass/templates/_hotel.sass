@@ -66,16 +66,26 @@
       height: 30px
       border: none
       cursor: pointer
-      background-repeat: no-repeat
-      background-position: center
-      background-size: 10px
       background-color: transparent
+      &:hover
+        .hotel-slider__icon-next
+          fill: $primary
+          transition: 0.2s
+        .hotel-slider__icon-prev
+          fill: $primary
+          transition: 0.2s
       &--next
         right: 18px
-        background-image: url(../img/arrow-right.svg)
       &--prev
         left: 18px
-        background-image: url(../img/arrow-left.svg)
+    &__icon-next
+      width: 12px
+      height: 17px
+      fill: $light
+    &__icon-prev
+      width: 12px
+      height: 17px
+      fill: $light
 .stars
   flex-basis: 100%
   &-icon
@@ -115,6 +125,7 @@
   &__icon
     width: 14px
     height: 14px
+    fill: $light
   &__info
     display: flex
     justify-content: space-between
@@ -160,6 +171,12 @@
     justify-content: space-between
     color: inherit
     text-decoration: none
+    &:hover
+      color: $primary
+      transition: 0.3s
+      .booking__icon
+        fill: $primary
+        transition: 0.3s
   &__num
     margin-left: 8px
     font-weight: 600
@@ -176,6 +193,9 @@
     background-color: $primary
     color: $light
     cursor: pointer
+    &:hover
+      background-color: $hoverPrimary
+      transition: 0.2s
 .map
   width: 347px
   height: 213px

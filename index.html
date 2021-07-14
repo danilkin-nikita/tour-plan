@@ -13,10 +13,7 @@
     />
     <link rel="stylesheet" href="css/swiper-bundle.min.css" />
     <link rel="stylesheet" href="css/style.css" />
-    <script
-      src="https://api-maps.yandex.ru/2.1/?apikey=81bbff24-8a86-46e5-b800-3c74b9d93283&lang=ru_RU"
-      type="text/javascript"
-    ></script>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=81bbff24-8a86-46e5-b800-3c74b9d93283&lang=ru_RU"></script>
   </head>
   <body>
     <header class="navbar">
@@ -170,12 +167,16 @@
               </div>
             </div>
             <!-- If we need navigation buttons -->
-            <button
-              class="hotel-slider__button hotel-slider__button--prev"
-            ></button>
-            <button
-              class="hotel-slider__button hotel-slider__button--next"
-            ></button>
+            <button class="hotel-slider__button hotel-slider__button--prev">
+              <svg class="hotel-slider__icon-prev">
+                <use xlink:href="img/sprite.svg#arrow-left"></use>
+              </svg>
+            </button>
+            <button class="hotel-slider__button hotel-slider__button--next">
+              <svg class="hotel-slider__icon-next">
+                <use xlink:href="img/sprite.svg#arrow-right"></use>
+              </svg>
+            </button>
           </div>
           <!-- /.swiper-container -->
 
@@ -229,10 +230,11 @@
       <!-- /.container -->
     </section>
     <section class="newsletter">
+      <div class="newsletter__bg"></div>
       <div class="newsletter-wrapper container">
         <h2 class="newsletter-title newsletter__title">
           subscribe to our
-          <span class="newsletter-title--strong">Newsletter</span>
+          <span class="newsletter-title__strong">Newsletter</span>
         </h2>
         <form action="#" class="subscribe newsletter__subscribe">
           <input
@@ -245,6 +247,120 @@
       </div>
       <!-- /.newsletter-wrapper -->
     </section>
+    <section class="reviews">
+      <div class="container reviews__container">
+        <h2 class="reviews__title">What people think about us</h2>
+        <div class="swiper-container reviews-slider">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide reviews-slider__slide">
+              <div class="reviews-slider__item">
+                <div class="reviews-slider__profile">
+                  <img
+                    src="img/reviews-avatar-1.jpeg"
+                    alt="Photo: Megan Fox"
+                    class="reviews-slider__avatar"
+                  />
+                  <h3 class="reviews-slider__username">Megan Fox</h3>
+                  <span class="reviews-slider__date">Stayed 18 Nov, 2019</span>
+                  <div class="stars reviews-slider__stars">
+                    <svg class="stars-icon">
+                      <use xlink:href="img/sprite.svg#stars"></use>
+                    </svg>
+                  </div>
+                </div>
+                <!-- /.reviws-slider__profile -->
+                <p class="reviews-slider__text">
+                  It was very nice hotel with cleanliness. Staff behavior was
+                  good and polite. They welcome us very well. Issue was only
+                  that Lift was not in working and we were allotted to 3rd floor
+                  and amenities articles were in corner of gallery which were
+                  giving bad feeling. Breakfast was good and support of the
+                  staff was also very nice. Location is not good as per
+                  atmosphere, it is very nearby most of the popular places but
+                  self location in a narrow street is not good. Overall it was a
+                  good experience and could recommend.
+                </p>
+              </div>
+              <!-- /.reviews-slider__item -->
+            </div>
+            <!-- /.swiper-slide -->
+            <div class="swiper-slide reviews-slider__slide">
+              <div class="reviews-slider__item">
+                <div class="reviews-slider__profile">
+                  <img
+                    src="img/reviews-avatar-2.jpeg"
+                    alt="Photo: David Sanders"
+                    class="reviews-slider__avatar"
+                  />
+                  <h3 class="reviews-slider__username">David Sanders</h3>
+                  <span class="reviews-slider__date">Stayed 12 Aug, 2019</span>
+                  <div class="stars reviews-slider__stars">
+                    <svg class="stars-icon">
+                      <use xlink:href="img/sprite.svg#stars"></use>
+                    </svg>
+                  </div>
+                </div>
+                <!-- /.reviws-slider__profile -->
+                <p class="reviews-slider__text">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui,
+                  eos. Obcaecati animi voluptas pariatur vitae eveniet
+                  voluptatem dolore, repellendus asperiores laudantium
+                  perspiciatis eius ipsum, cupiditate praesentium nihil
+                  laboriosam, enim sint. Lorem ipsum dolor sit, amet consectetur
+                  adipisicing elit. Magnam a recusandae quia incidunt doloribus?
+                  Neque quia nulla totam reiciendis porro quaerat perspiciatis
+                  corporis voluptatibus, consequuntur inventore sequi? Minus,
+                  quos ipsam.
+                </p>
+              </div>
+              <!-- /.reviews-slider__item -->
+            </div>
+            <!-- /.swiper-slide -->
+            <div class="swiper-slide reviews-slider__slide">
+              <div class="reviews-slider__item">
+                <div class="reviews-slider__profile">
+                  <img
+                    src="img/reviews-avatar-3.jpeg"
+                    alt="Photo: Abby Williams"
+                    class="reviews-slider__avatar"
+                  />
+                  <h3 class="reviews-slider__username">Abby Williams</h3>
+                  <span class="reviews-slider__date">Stayed 26 Dec, 2016</span>
+                  <div class="stars reviews-slider__stars">
+                    <svg class="stars-icon">
+                      <use xlink:href="img/sprite.svg#stars"></use>
+                    </svg>
+                  </div>
+                </div>
+                <!-- /.reviws-slider__profile -->
+                <p class="reviews-slider__text">
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum
+                  recusandae, non fuga odit maxime ea accusamus enim dolor
+                  inventore ad obcaecati laborum quae quasi asperiores minima,
+                  iusto, accusantium vero earum. lorem
+                </p>
+              </div>
+              <!-- /.reviews-slider__item -->
+            </div>
+            <!-- /.swiper-slide -->
+          </div>
+          <!-- /.swiper-wrapper -->
+          <button class="reviews-slider__button reviews-slider__button--prev">
+            <svg class="reviews-slider__icon-prev">
+              <use xlink:href="img/sprite.svg#arrow-left"></use>
+            </svg>
+          </button>
+          <button class="reviews-slider__button reviews-slider__button--next">
+            <svg class="reviews-slider__icon-next">
+              <use xlink:href="img/sprite.svg#arrow-right"></use>
+            </svg>
+          </button>
+        </div>
+        <!-- /.reviews-slider -->
+      </div>
+      <!-- /.container -->
+    </section>
+    <script src="js/simpleParallax.min.js"></script>
     <script src="js/swiper-bundle.min.js"></script>
     <script src="js/script.js"></script>
   </body>

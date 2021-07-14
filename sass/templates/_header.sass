@@ -27,6 +27,9 @@
       text-transform: uppercase
       font-size: 14px
       line-height: 18px
+      &:hover
+        color: $primary
+        transition: 0.2s
 .logo__icon
   height: 24px
   width: 177px
@@ -57,6 +60,9 @@
     border: none
     background-color: $primary
     cursor: pointer
+    &:hover
+      background-color: $hoverPrimary
+      transition: 0.2s
   &__icon
     height: 16px
     width: 16px
@@ -64,6 +70,10 @@
   display: flex
   align-items: center
   text-decoration: none
+  &:hover
+    .user__name
+      &::after
+        width: 100%
   &__avatar
     width: 40px
     height: 40px
@@ -74,4 +84,11 @@
     font-size: 14px
     line-height: 18px
     color: $text-color
+    &::after
+        content: ''
+        display: block
+        height: 1px
+        background-color: $text-color
+        transition: 0.2s
+        width: 0%
 
