@@ -13,7 +13,7 @@ img {
   max-width: 100%;
 }
 
-button:focus {
+button:focus, input:focus {
   outline: none;
 }
 
@@ -451,6 +451,8 @@ template {
   font-size: 12px;
   line-height: 15px;
   color: #333333;
+  -webkit-transition: .17s linear;
+  transition: .17s linear;
 }
 
 .search__input::-webkit-input-placeholder {
@@ -467,6 +469,12 @@ template {
 
 .search__input::placeholder {
   color: #333333;
+}
+
+.search__input:focus {
+  -webkit-box-shadow: 0px 0px 6px -1px rgba(6, 137, 238, 0.81) inset;
+  -webkit-box-shadow-moz-box-shadow: 0px 0px 6px -1px rgba(6, 137, 238, 0.81) inset;
+  -webkit-box-shadow-box-shadow: 0px 0px 6px -1px rgba(6, 137, 238, 0.81) inset;
 }
 
 .search__button {
@@ -920,14 +928,14 @@ template {
 
 .newsletter__bg {
   position: absolute;
+  top: 0;
+  left: 0;
   bottom: 0;
   right: 0;
-  background-image: url(../img/newsletter-bg.jpeg);
+  background-image: url(../img/newsletter/newsletter-bg.jpeg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  width: 100%;
-  height: 100%;
 }
 
 .newsletter__bg::before {
@@ -1000,6 +1008,14 @@ template {
   font-weight: 300;
   font-size: 14px;
   line-height: 18px;
+  -webkit-transition: .17s linear;
+  transition: .17s linear;
+}
+
+.subscribe__input:focus {
+  -webkit-box-shadow: 0px 0px 6px 3px rgba(6, 137, 238, 0.61) inset;
+  -webkit-box-shadow-moz-box-shadow: 0px 0px 6px 3px rgba(6, 137, 238, 0.61) inset;
+  -webkit-box-shadow-box-shadow: 0px 0px 6px 3px rgba(6, 137, 238, 0.61) inset;
 }
 
 .subscribe__button {
@@ -1045,6 +1061,7 @@ template {
 }
 
 .reviews-slider__item {
+  position: relative;
   max-width: 730px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1070,7 +1087,7 @@ template {
   top: 13px;
   width: 70px;
   height: 47px;
-  background-image: url(../img/quotes-left.svg);
+  background-image: url(../img/reviews-block/quotes-left.svg);
   background-repeat: no-repeat;
 }
 
@@ -1081,7 +1098,7 @@ template {
   bottom: 114px;
   width: 70px;
   height: 47px;
-  background-image: url(../img/quotes-right.svg);
+  background-image: url(../img/reviews-block/quotes-right.svg);
   background-repeat: no-repeat;
 }
 
@@ -1177,9 +1194,128 @@ template {
   margin: 0;
 }
 
+.activities {
+  padding: 60px 0 98px 0;
+}
+
+.activities__title {
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 30px;
+  text-transform: uppercase;
+  margin-top: 0;
+  margin-bottom: 57px;
+}
+
+.activities-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.card {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  width: 255px;
+  height: 255px;
+  border-radius: 6px;
+  overflow: hidden;
+  padding: 24px 26px;
+  -webkit-transition: all 1s ease-out;
+  transition: all 1s ease-out;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: linear-gradient(179.83deg, rgba(196, 196, 196, 0) 35.34%, #0A223D 99.85%);
+  z-index: -1;
+}
+
+.card:hover {
+  -webkit-box-shadow: 0 0 17px rgba(6, 137, 238, 0.31);
+          box-shadow: 0 0 17px rgba(6, 137, 238, 0.31);
+}
+
+.card:hover .card__img {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.card__img {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  z-index: -2;
+  -webkit-transition: all 1s ease-out;
+  transition: all 1s ease-out;
+}
+
+.card__wrapper {
+  padding-right: 43px;
+}
+
+.card__title {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 20px;
+  color: #fff;
+  margin-top: auto;
+  margin-bottom: 18px;
+  text-align: start;
+}
+
+.card__button {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+  background-color: #EC1F46;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  min-width: 100px;
+  min-height: 30px;
+  cursor: pointer;
+}
+
+.card__button:hover {
+  background-color: #ad0322;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
 @media (max-width: 1200px) {
   .container {
     max-width: 960px;
+  }
+  .card {
+    width: 230px;
+    height: 230px;
   }
 }
 
@@ -1240,6 +1376,9 @@ template {
     max-width: 579px;
     padding: 0 60px 30px 64px;
   }
+  .reviews-slider__item::after, .reviews-slider__item::before {
+    display: none;
+  }
   .reviews-slider__button--next {
     right: 0px;
     top: 50%;
@@ -1252,6 +1391,23 @@ template {
     font-size: 30px;
     line-height: 38px;
     margin-bottom: 50px;
+  }
+  .activities {
+    padding-bottom: 70px;
+  }
+  .activities-wrapper {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .activities__card:first-child, .activities__card:nth-child(2) {
+    margin-bottom: 20px;
+  }
+  .card {
+    width: 340px;
+    height: 255px;
+  }
+  .card__wrapper {
+    padding-right: 130px;
   }
 }
 
@@ -1378,8 +1534,9 @@ template {
   .reviews-slider__item {
     padding: 0 29px 36px 33px;
   }
-  .reviews-slider__item::after, .reviews-slider__item::before {
-    display: none;
+  .card {
+    width: 48%;
+    height: 255px;
   }
 }
 
@@ -1468,6 +1625,30 @@ template {
   }
   .reviews-slider__text {
     text-align: start;
+  }
+  .activities {
+    padding-top: 40px;
+    padding-bottom: 60px;
+  }
+  .activities__title {
+    font-size: 18px;
+    line-height: 23px;
+    margin-bottom: 36px;
+  }
+  .card {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .card:first-child, .card:nth-child(3) {
+    -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
+            order: -1;
+  }
+  .card:last-child {
+    margin-bottom: 0;
+  }
+  .card__wrapper {
+    padding-right: 70px;
   }
 }
 
