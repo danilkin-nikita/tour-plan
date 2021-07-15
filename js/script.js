@@ -1,13 +1,6 @@
 "use sctrict";
 
-let newsletterBg = document.querySelector(".newsletter__bg");
-
-// Создание параллакс эффекта для блока newsletter
-new simpleParallax(newsletterBg, {
-  orientation: "down",
-  scale: 1.5,
-  delay: 1,
-});
+let newsletterBg = document.querySelector(".newsletter");
 
 //Инициализация слайдера отеля
 const hotelSwiper = new Swiper(".hotel-slider", {
@@ -70,3 +63,9 @@ function init() {
     )
   );
 }
+
+// Создание параллакс эффекта для блока newsletter
+$(".newsletter").parallax({
+  imageSrc: "img/newsletter/newsletter-bg.jpeg",
+  speed: 0.4,
+});
