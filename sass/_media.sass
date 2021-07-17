@@ -4,6 +4,13 @@
   .card
     width: 230px
     height: 230px
+  .packages
+    &__grid-container
+      grid-template: min-content / repeat(2, 1fr)
+    &-card-extended
+      grid-column: 1 / 3
+      &__features
+        margin-bottom: 77px
 @media (max-width: 992px)
   .container
     max-width: 700px
@@ -73,6 +80,14 @@
     height: 255px
     &__wrapper
       padding-right: 130px
+  .packages
+    &__title
+      font-size: 30px
+      margin-bottom: 50px
+    &-card
+      &-extended
+        &__features
+          margin-bottom: 34px
 @media (max-width: 768px)
   .navbar
     &__search
@@ -141,6 +156,8 @@
     &__title
       margin-bottom: 37px
   .reviews
+    &__title
+      font-size: 24px
     &-slider
       &__button
         top: 30px
@@ -157,6 +174,17 @@
   .card
     width: 48%
     height: 255px
+  .packages
+    &__title
+      font-size: 24px
+    &-card
+      &-extended
+        &__info
+          padding: 30px 21px 25px 32px;
+        &__text
+          font-size: 13px
+        &__features
+          margin-bottom: 42px
 @media (max-width: 610px)
   .container
      width: 88%
@@ -236,6 +264,31 @@
       margin-bottom: 0
     &__wrapper
       padding-right: 70px
+  .packages
+    padding: 20px 0 50px 0
+    &__title
+      font-size: 18px
+      line-height: 23px
+      margin-bottom: 36px
+    &-card
+      grid-template: 50% 50% / 100%
+      grid-column: 1 / 3
+      &::before
+        width: 60px
+        height: 18px
+        display: flex
+        font-weight: 600
+        font-size: 8px
+        line-height: 10px
+      &-extended
+        &__text
+          display: none
+      &__stars
+        display: none
+      &__title
+        margin-bottom: 23px
+      &__features
+        margin-bottom: 20px
 @media (max-width: 320px)
   .map
     width: 280px

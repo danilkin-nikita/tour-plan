@@ -973,11 +973,10 @@ template {
 .packages__grid-container {
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: -webkit-min-content -webkit-min-content;
-  -ms-grid-rows: min-content min-content;
+  -ms-grid-rows: -webkit-max-content;
+  -ms-grid-rows: max-content;
   -ms-grid-columns: (1fr)[3];
-      grid-template: -webkit-min-content min-content/repeat(3, 1fr);
-      grid-template: min-content min-content/repeat(3, 1fr);
+      grid-template: max-content/repeat(3, 1fr);
   row-gap: 30px;
   -webkit-column-gap: 30px;
           column-gap: 30px;
@@ -1566,6 +1565,20 @@ template {
     width: 230px;
     height: 230px;
   }
+  .packages__grid-container {
+    -ms-grid-rows: -webkit-min-content;
+    -ms-grid-rows: min-content;
+    -ms-grid-columns: (1fr)[2];
+        grid-template: min-content/repeat(2, 1fr);
+  }
+  .packages-card-extended {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-column: 1 / 3;
+  }
+  .packages-card-extended__features {
+    margin-bottom: 77px;
+  }
 }
 
 @media (max-width: 992px) {
@@ -1657,6 +1670,13 @@ template {
   }
   .card__wrapper {
     padding-right: 130px;
+  }
+  .packages__title {
+    font-size: 30px;
+    margin-bottom: 50px;
+  }
+  .packages-card-extended__features {
+    margin-bottom: 34px;
   }
 }
 
@@ -1765,6 +1785,9 @@ template {
   .newsletter__title {
     margin-bottom: 37px;
   }
+  .reviews__title {
+    font-size: 24px;
+  }
   .reviews-slider__button {
     top: 30px;
   }
@@ -1786,6 +1809,18 @@ template {
   .card {
     width: 48%;
     height: 255px;
+  }
+  .packages__title {
+    font-size: 24px;
+  }
+  .packages-card-extended__info {
+    padding: 30px 21px 25px 32px;
+  }
+  .packages-card-extended__text {
+    font-size: 13px;
+  }
+  .packages-card-extended__features {
+    margin-bottom: 42px;
   }
 }
 
@@ -1898,6 +1933,44 @@ template {
   }
   .card__wrapper {
     padding-right: 70px;
+  }
+  .packages {
+    padding: 20px 0 50px 0;
+  }
+  .packages__title {
+    font-size: 18px;
+    line-height: 23px;
+    margin-bottom: 36px;
+  }
+  .packages-card {
+    -ms-grid-rows: 50% 50%;
+    -ms-grid-columns: 100%;
+        grid-template: 50% 50% / 100%;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-column: 1 / 3;
+  }
+  .packages-card::before {
+    width: 60px;
+    height: 18px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    font-weight: 600;
+    font-size: 8px;
+    line-height: 10px;
+  }
+  .packages-card-extended__text {
+    display: none;
+  }
+  .packages-card__stars {
+    display: none;
+  }
+  .packages-card__title {
+    margin-bottom: 23px;
+  }
+  .packages-card__features {
+    margin-bottom: 20px;
   }
 }
 
