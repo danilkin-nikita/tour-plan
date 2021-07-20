@@ -30,7 +30,7 @@
               class="search__input"
               placeholder="Search Location"
             />
-            <button class="search__button">
+            <button class="search__button button">
               <svg class="search__icon">
                 <use xlink:href="img/sprite.svg#search"></use>
               </svg>
@@ -217,7 +217,9 @@
                 </a>
               </div>
               <!-- /.booking__call-center -->
-              <button class="button booking__button">View Other Options</button>
+              <button class="button booking__button button">
+                View Other Options
+              </button>
             </div>
             <!-- /.booking -->
             <div class="map" id="map"></div>
@@ -283,7 +285,9 @@
               <div class="packages-card__old-cost">$ 10,500</div>
               <span class="packages-card__wrapper"
                 ><span class="packages-card__cost">$ 8,500</span
-                ><button class="packages-card__button">Book Now</button></span
+                ><button class="packages-card__button button">
+                  Book Now
+                </button></span
               >
             </div>
             <!-- /.packages-card__info card-info -->
@@ -323,7 +327,9 @@
               <div class="packages-card__old-cost">$ 8,500</div>
               <span class="packages-card__wrapper"
                 ><span class="packages-card__cost">$ 3,000</span
-                ><button class="packages-card__button">Book Now</button></span
+                ><button class="packages-card__button button">
+                  Book Now
+                </button></span
               >
             </div>
             <!-- /.packages-card__info card-info -->
@@ -363,7 +369,9 @@
               <div class="packages-card__old-cost">$ 10,500</div>
               <span class="packages-card__wrapper"
                 ><span class="packages-card__cost">$ 9,500</span
-                ><button class="packages-card__button">Book Now</button></span
+                ><button class="packages-card__button button">
+                  Book Now
+                </button></span
               >
             </div>
             <!-- /.packages-card__info card-info -->
@@ -403,7 +411,9 @@
               <div class="packages-card__old-cost">$ 4,500</div>
               <span class="packages-card__wrapper"
                 ><span class="packages-card__cost">$ 2,500</span
-                ><button class="packages-card__button">Book Now</button></span
+                ><button class="packages-card__button button">
+                  Book Now
+                </button></span
               >
             </div>
             <!-- /.packages-card__info card-info -->
@@ -443,7 +453,9 @@
               <div class="packages-card__old-cost">$ 6,500</div>
               <span class="packages-card__wrapper"
                 ><span class="packages-card__cost">$ 3,500</span
-                ><button class="packages-card__button">Book Now</button></span
+                ><button class="packages-card__button button">
+                  Book Now
+                </button></span
               >
             </div>
             <!-- /.packages-card__info card-info -->
@@ -466,7 +478,7 @@
             class="subscribe__input"
             placeholder="Your email address"
           />
-          <button class="subscribe__button">Send</button>
+          <button class="subscribe__button button">Send</button>
         </form>
       </div>
       <!-- /.newsletter-wrapper -->
@@ -596,7 +608,7 @@
             />
             <div class="card__wrapper">
               <h3 class="card__title">The curious corner of chamarel</h3>
-              <button class="card__button">Book Now</button>
+              <button class="card__button button">Book Now</button>
             </div>
             <!-- /.card__wrapper -->
           </div>
@@ -609,7 +621,7 @@
             />
             <div class="card__wrapper">
               <h3 class="card__title">Gymkhana club golf course</h3>
-              <button class="card__button">Book Now</button>
+              <button class="card__button button">Book Now</button>
             </div>
             <!-- /.card__wrapper -->
           </div>
@@ -622,7 +634,7 @@
             />
             <div class="card__wrapper">
               <h3 class="card__title">Tamarind falls hiking trip - full day</h3>
-              <button class="card__button">Book Now</button>
+              <button class="card__button button">Book Now</button>
             </div>
             <!-- /.card__wrapper -->
           </div>
@@ -635,7 +647,7 @@
             />
             <div class="card__wrapper">
               <h3 class="card__title">The blue marine discovery quest</h3>
-              <button class="card__button">Book Now</button>
+              <button class="card__button button">Book Now</button>
             </div>
             <!-- /.card__wrapper -->
           </div>
@@ -648,13 +660,15 @@
     <footer class="footer">
       <div class="container">
         <div class="footer-wrapper">
-          <a href="#" class="footer-logo">
+          <a href="#" class="footer-logo footer__logo">
             <svg class="footer-logo__icon">
               <use xlink:href="img/sprite.svg#vertical-logo"></use>
             </svg>
           </a>
           <div class="footer__list footer__categories">
-            <h3 class="footer__title">ALL CATEGORIES</h3>
+            <h3 class="footer__title footer__categories-title">
+              ALL CATEGORIES
+            </h3>
             <ul class="footer__ul">
               <li class="footer__item">
                 <a href="#" class="footer__link">All Deals</a>
@@ -712,16 +726,16 @@
           <div class="footer__social-network">
             <h3 class="footer__title footer__title--inline">Social Network</h3>
             <div class="footer__social-links">
-              <a href="#" class="footer_link footer__social-link">
+              <a href="#" class="footer__link footer__social-link">
                 <svg class="footer__icon fb-icon">
                   <use xlink:href="img/sprite.svg#fb"></use>
                 </svg>
               </a>
-              <a href="#" class="footer_link footer__social-link"
+              <a href="#" class="footer__link footer__social-link"
                 ><svg class="footer__icon inst-icon">
                   <use xlink:href="img/sprite.svg#inst"></use></svg
               ></a>
-              <a href="#" class="footer_link footer__social-link"
+              <a href="#" class="footer__link footer__social-link"
                 ><svg class="footer__icon yotube-icon">
                   <use xlink:href="img/sprite.svg#yotube"></use></svg
               ></a>
@@ -754,18 +768,22 @@
             </p>
             <ul class="footer__ul">
               <li class="footer__item footer__contact-item">
-                <svg class="footer__contact-icon">
-                  <use xlink:href="img/sprite.svg#map-marker"></use>
-                </svg>
+                <div class="footer__icon-wrapper">
+                  <svg class="footer__contact-icon">
+                    <use xlink:href="img/sprite.svg#map-marker"></use>
+                  </svg>
+                </div>
                 <p class="footer__text footer__contact-text">
                   9748 Blossom Hill Rd undefined Lansing, Idaho 68545 United
                   States
                 </p>
               </li>
               <li class="footer__item footer__contact-item">
-                <svg class="footer__contact-icon">
-                  <use xlink:href="img/sprite.svg#phone-call"></use>
-                </svg>
+                <div class="footer__icon-wrapper">
+                  <svg class="footer__contact-icon">
+                    <use xlink:href="img/sprite.svg#phone-call"></use>
+                  </svg>
+                </div>
                 <p class="footer__text footer__contact-text">
                   Tel (business hours) : 269 1500<br />
                   Tel (hotline) Monday - Saturday: 52-56-61-38 (08:00 am – 20:00
@@ -774,9 +792,11 @@
                 </p>
               </li>
               <li class="footer__item footer__contact-item">
-                <svg class="footer__contact-icon">
-                  <use xlink:href="img/sprite.svg#email"></use>
-                </svg>
+                <div class="footer__icon-wrapper">
+                  <svg class="footer__contact-icon">
+                    <use xlink:href="img/sprite.svg#email"></use>
+                  </svg>
+                </div>
                 <p class="footer__text footer__contact-text">
                   cherly.lawson@example.com
                 </p>
@@ -810,6 +830,25 @@
           <!-- /.footer__contact-form -->
         </div>
         <!-- /.footer-wrapper -->
+        <div class="footer__privacy">
+          <ul class="footer__ul footer__privacy-ul">
+            <li class="footer__item footer__privacy-item">
+              <a href="#" class="footer__link">Disclaimer</a>
+            </li>
+            <li class="footer__item footer__privacy-item">
+              <a href="#" class="footer__link">Conditions of use</a>
+            </li>
+            <li class="footer__item footer__privacy-item">
+              <a href="#" class="footer__link">Cancellation policy</a>
+            </li>
+          </ul>
+          <img
+            src="img/footer/payment-systems.png"
+            alt="Payment systems"
+            class="footer__payment-systems"
+          />
+        </div>
+        <!-- /.footer__privacy -->
       </div>
       <!-- /.container -->
     </footer>
