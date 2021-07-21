@@ -557,6 +557,14 @@ template {
   width: 0%;
 }
 
+.scroll-menu {
+  overflow: hidden;
+}
+
+.scroll-menu .navbar-menu--visible {
+  overflow-y: auto;
+}
+
 .breadcrumb-list {
   display: -webkit-box;
   display: -ms-flexbox;
