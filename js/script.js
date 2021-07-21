@@ -1,6 +1,11 @@
 "use sctrict";
 
-let newsletterBg = document.querySelector(".newsletter");
+let menuButton = document.querySelector(".menu-button"),
+  navbarMenu = document.querySelector(".navbar-menu");
+
+menuButton.addEventListener("click", () => {
+  navbarMenu.classList.toggle("navbar-menu--visible");
+});
 
 //Инициализация слайдера отеля
 const hotelSwiper = new Swiper(".hotel-slider", {
