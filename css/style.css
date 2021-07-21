@@ -478,9 +478,9 @@ template {
 }
 
 .search__input:focus {
-  -webkit-box-shadow: 0px 0px 6px -1px rgba(6, 137, 238, 0.81) inset;
-  -webkit-box-shadow-moz-box-shadow: 0px 0px 6px -1px rgba(6, 137, 238, 0.81) inset;
-  -webkit-box-shadow-box-shadow: 0px 0px 6px -1px rgba(6, 137, 238, 0.81) inset;
+  -webkit-box-shadow: 0px 0px 6px 3px rgba(6, 137, 238, 0.61) inset;
+  -webkit-box-shadow-moz-box-shadow: 0px 0px 6px 3px rgba(6, 137, 238, 0.61) inset;
+  -webkit-box-shadow-box-shadow: 0px 0px 6px 3px rgba(6, 137, 238, 0.61) inset;
 }
 
 .search__button {
@@ -2201,6 +2201,8 @@ template {
     position: fixed;
     left: -100%;
     right: 100%;
+    bottom: 0;
+    top: 87px;
     -webkit-transition: left 0.4s ease-out, right 0.4s ease-out;
     transition: left 0.4s ease-out, right 0.4s ease-out;
   }
@@ -2266,6 +2268,7 @@ template {
     max-width: 345px;
   }
   .menu-button {
+    position: relative;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -2286,10 +2289,55 @@ template {
     background-color: #fff;
     cursor: pointer;
   }
-  .menu-button__line {
+  .menu-button::after {
+    content: '';
+    position: absolute;
+    top: 0;
     width: 16px;
     height: 1px;
     background-color: #333333;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+  .menu-button::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 16px;
+    height: 1px;
+    background-color: #333333;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+  .menu-button__line {
+    position: absolute;
+    top: 5px;
+    width: 16px;
+    height: 1px;
+    background-color: #333333;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+  .menu-button--active .menu-button__line {
+    -webkit-transform: rotate(-38deg);
+            transform: rotate(-38deg);
+    opacity: 0;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+  .menu-button--active::after {
+    -webkit-transform: rotate(-38deg);
+            transform: rotate(-38deg);
+    top: 5px;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+  .menu-button--active::before {
+    -webkit-transform: rotate(38deg);
+            transform: rotate(38deg);
+    top: 5px;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
   }
   .user__name--light {
     color: #fff;
@@ -2395,6 +2443,9 @@ template {
   .navbar-top {
     padding-top: 20px;
     padding-bottom: 23px;
+  }
+  .navbar-menu {
+    top: 70px;
   }
   .navbar-menu--visible {
     top: 70px;

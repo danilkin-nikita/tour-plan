@@ -210,6 +210,8 @@
       position: fixed
       left: -100%
       right: 100%
+      bottom: 0
+      top: 87px
       transition: left 0.4s ease-out, right 0.4s ease-out
       &--visible
         display: block
@@ -256,6 +258,7 @@
       max-width: 345px
   .menu
     &-button
+      position: relative
       display: flex
       width: 16px
       height: 11px
@@ -266,10 +269,42 @@
       border: none
       background-color: $light
       cursor: pointer
-      &__line
+      &::after
+        content: ''
+        position: absolute
+        top: 0
         width: 16px
         height: 1px
         background-color: $text-color
+        transition: 0.4s
+      &::before
+        content: ''
+        position: absolute
+        bottom: 0
+        width: 16px
+        height: 1px
+        background-color: $text-color
+        transition: 0.4s
+      &__line
+        position: absolute
+        top: 5px
+        width: 16px
+        height: 1px
+        background-color: $text-color
+        transition: 0.4s
+      &--active &__line
+        transform: rotate(-38deg)
+        opacity: 0
+        transition: 0.4s
+      &--active
+        &::after
+          transform: rotate(-38deg)
+          top: 5px
+          transition: 0.4s
+        &::before
+          transform: rotate(38deg)
+          top: 5px
+          transition: 0.4s
   .user
     &__name
       &--light
@@ -346,6 +381,7 @@
       padding-top: 20px
       padding-bottom: 23px
     &-menu
+      top: 70px
       &--visible
         top: 70px
       &__link

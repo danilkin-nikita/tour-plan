@@ -5,6 +5,7 @@ let menuButton = document.querySelector(".menu-button"),
 
 menuButton.addEventListener("click", () => {
   navbarMenu.classList.toggle("navbar-menu--visible");
+  menuButton.classList.toggle("menu-button--active");
 });
 
 //Инициализация слайдера отеля
