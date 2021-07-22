@@ -2,7 +2,7 @@
 // Скрипт для мобильного меню
 const mobileMenu = () => {
   let menuButton = document.querySelector(".menu-button"),
-  navbarMenu = document.querySelector(".navbar-menu");
+    navbarMenu = document.querySelector(".navbar-menu");
 
   menuButton.addEventListener("click", () => {
     navbarMenu.classList.toggle("navbar-menu--visible");
@@ -81,47 +81,48 @@ ymaps.ready(init);
 
 //Отправка формы
 const sendForm = () => {
-  const statusMessage = document.createElement('div');
+  const statusMessage = document.createElement("div");
 
-  document.addEventListener('submit', event => {
+  document.addEventListener("submit", (event) => {
     event.preventDefault();
     const target = event.target;
 
-    if (target.matches('form')) {
+    if (target.matches("form")) {
       const formData = new FormData(target);
 
       target.appendChild(statusMessage);
-      statusMessage.classList.add('send__status')
+      statusMessage.classList.add("send__status");
       statusMessage.innerHTML = `<img class="send__preloader" src="./img/loading.svg">`;
 
       postData(formData)
-        .then(response => {
+        .then((response) => {
           if (response.status !== 200) {
-            throw new Error('status network not 200');
+            throw new Error("status network not 200");
           }
-          statusMessage.textContent = 'Message sent! Our manager will call you back in 5 minutes.';
+          statusMessage.textContent =
+            "Message sent! Our manager will call you back in 5 minutes.";
           setTimeout(() => {
             statusMessage.remove();
           }, 3000);
         })
-        .catch(error => {
+        .catch((error) => {
           console.error(error);
-          statusMessage.textContent = 'Something went wrong...';
+          statusMessage.textContent = "Something went wrong...";
           setTimeout(() => {
             statusMessage.remove();
           }, 3000);
         });
-        target.reset();
+      target.reset();
     }
   });
 
-  const postData = formData => {
-    return fetch('./send.php', {
-      method: 'POST',
+  const postData = (formData) => {
+    return fetch("./send.php", {
+      method: "POST",
       body: formData,
-      action: './send.php'
+      action: "./send.php",
     });
-  }; 
+  };
 };
 
 sendForm();

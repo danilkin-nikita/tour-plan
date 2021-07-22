@@ -38,11 +38,11 @@ try {
 
     // Настройки вашей почты
     $mail->Host       = 'smtp.gmail.com'; // SMTP сервера вашей почты
-    $mail->Username   = ''; // Логин на почте
-    $mail->Password   = ''; // Пароль на почте
+    $mail->Username   = 'testsendmessage531@gmail.com'; // Логин на почте
+    $mail->Password   = '3asdads32345345xczv'; // Пароль на почте
     $mail->SMTPSecure = 'ssl';
     $mail->Port       = 465;
-    $mail->setFrom('', ''); // Адрес самой почты и имя отправителя
+    $mail->setFrom('testsendmessage531@gmail.com', 'Иван Иванов'); // Адрес самой почты и имя отправителя
 
     // Получатель письма
     $mail->addAddress('ni.danilkin@gmail.com');  
