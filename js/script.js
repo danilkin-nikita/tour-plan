@@ -1,44 +1,49 @@
 "use sctrict";
-
-let menuButton = document.querySelector(".menu-button"),
+// Скрипт для мобильного меню
+const mobileMenu = () => {
+  let menuButton = document.querySelector(".menu-button"),
   navbarMenu = document.querySelector(".navbar-menu");
 
-menuButton.addEventListener("click", () => {
-  navbarMenu.classList.toggle("navbar-menu--visible");
-  menuButton.classList.toggle("menu-button--active");
-  document.body.classList.toggle("scroll-menu");
-});
+  menuButton.addEventListener("click", () => {
+    navbarMenu.classList.toggle("navbar-menu--visible");
+    menuButton.classList.toggle("menu-button--active");
+    document.body.classList.toggle("scroll-menu");
+  });
+};
 
-//Инициализация слайдера отеля
-const hotelSwiper = new Swiper(".hotel-slider", {
-  loop: true,
-  navigation: {
-    nextEl: ".hotel-slider__button--next",
-    prevEl: ".hotel-slider__button--prev",
-  },
-  grabCursor: true,
-  autoplay: {
-    delay: 4000,
-    disableOnInteraction: false,
-  },
-  keyboard: {
-    enabled: true,
-  },
-});
+mobileMenu();
 
-// Инициализация слайдера с отзывами
-const reviewsSwiper = new Swiper(".reviews-slider", {
-  loop: true,
-  navigation: {
-    nextEl: ".reviews-slider__button--next",
-    prevEl: ".reviews-slider__button--prev",
-  },
-});
+// Инициализация слайдеров
+const initSliders = () => {
+  // Инициализация слайдера отеля
+  const hotelSwiper = new Swiper(".hotel-slider", {
+    loop: true,
+    navigation: {
+      nextEl: ".hotel-slider__button--next",
+      prevEl: ".hotel-slider__button--prev",
+    },
+    grabCursor: true,
+    autoplay: {
+      delay: 4000,
+      disableOnInteraction: false,
+    },
+    keyboard: {
+      enabled: true,
+    },
+  });
+  // Инициализация слайдера с отзывами
+  const reviewsSwiper = new Swiper(".reviews-slider", {
+    loop: true,
+    navigation: {
+      nextEl: ".reviews-slider__button--next",
+      prevEl: ".reviews-slider__button--prev",
+    },
+  });
+};
 
-//Инициализация карты
-ymaps.ready(init);
+initSliders();
 
-function init() {
+const init = () => {
   // Создание карты.
   let myMap = new ymaps.Map(
     "map",
@@ -69,7 +74,57 @@ function init() {
       }
     )
   );
-}
+};
+
+//Инициализация карты
+ymaps.ready(init);
+
+//Отправка формы
+const sendForm = () => {
+  const statusMessage = document.createElement('div');
+
+  document.addEventListener('submit', event => {
+    event.preventDefault();
+    const target = event.target;
+
+    if (target.matches('form')) {
+      const formData = new FormData(target);
+
+      target.appendChild(statusMessage);
+      statusMessage.classList.add('send__status')
+      statusMessage.innerHTML = `<img class="send__preloader" src="./img/loading.svg">`;
+
+      postData(formData)
+        .then(response => {
+          if (response.status !== 200) {
+            throw new Error('status network not 200');
+          }
+          statusMessage.textContent = 'Message sent! Our manager will call you back in 5 minutes.';
+          setTimeout(() => {
+            statusMessage.remove();
+          }, 3000);
+        })
+        .catch(error => {
+          console.error(error);
+          statusMessage.textContent = 'Something went wrong...';
+          setTimeout(() => {
+            statusMessage.remove();
+          }, 3000);
+        });
+        target.reset();
+    }
+  });
+
+  const postData = formData => {
+    return fetch('./send.php', {
+      method: 'POST',
+      body: formData,
+      action: './send.php'
+    });
+  }; 
+};
+
+sendForm();
 
 // Создание параллакс эффекта для блока newsletter
 $(".newsletter").parallax({

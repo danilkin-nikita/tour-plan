@@ -503,13 +503,18 @@
           subscribe to our
           <span class="newsletter-title__strong">Newsletter</span>
         </h2>
-        <form action="#" class="subscribe newsletter__subscribe">
-          <input
-            type="text"
+        <form class="subscribe newsletter__subscribe">
+          <div class="subscribe-wrapper newsletter__subscribe-wrapper">
+            <input
+            type="email"
             class="subscribe__input"
             placeholder="Your email address"
+            name="email"
+            required
           />
           <button class="subscribe__button button">Send</button>
+          </div>
+          <!-- /.subscribe-wrapper newsletter__subscribe-wrapper -->
         </form>
       </div>
       <!-- /.newsletter-wrapper -->
@@ -858,22 +863,25 @@
           <!-- /.footer__contact-details -->
           <div class="footer__contact-form">
             <h3 class="footer__title footer__form-title">Send us a message</h3>
-            <form action="#" class="footer__form">
+            <form class="footer__form">
               <input
                 type="text"
                 class="input footer__input"
                 placeholder="Your Full Name*"
+                name="name"
+                required
               />
               <input
                 type="text"
                 class="input footer__input"
                 placeholder="Phone Number*"
+                name="phone"
+                required
               />
               <textarea
-                cols="30"
-                rows="10"
                 class="footer__message"
                 placeholder="Message"
+                name="message"
               ></textarea>
               <button class="button footer__button" type="submit">Send</button>
               <span class="footer__info">* Required Fields</span>

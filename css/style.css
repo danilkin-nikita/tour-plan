@@ -22,6 +22,24 @@ button:focus, input:focus, textarea:focus {
   margin: auto;
 }
 
+.send__status {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #fff;
+  margin-top: 20px;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+}
+
+.send__preloader {
+  height: 50px;
+  width: 50px;
+}
+
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -1238,7 +1256,7 @@ template {
   text-transform: uppercase;
 }
 
-.subscribe {
+.subscribe-wrapper {
   position: relative;
   width: 350px;
   height: 55px;
@@ -1748,6 +1766,7 @@ template {
 }
 
 .footer__form {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2716,6 +2735,11 @@ template {
     -ms-flex-preferred-size: 100%;
         flex-basis: 100%;
     margin-bottom: 15px;
+  }
+  .send__status {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
   }
 }
 
