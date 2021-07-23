@@ -19,7 +19,7 @@
     <header class="navbar navbar__mobile--fixed">
       <div class="container">
         <div class="navbar-top">
-          <a href="#" class="logo">
+          <a href="index.html" class="logo">
             <svg class="logo__icon">
               <use xlink:href="img/sprite.svg#horizontal-logo"></use>
             </svg>
@@ -493,7 +493,11 @@
           subscribe to our
           <span class="newsletter-title__strong">Newsletter</span>
         </h2>
-        <form class="subscribe newsletter__subscribe send-form">
+        <form
+          action="send.php"
+          method="POST"
+          class="subscribe newsletter__subscribe send-form"
+        >
           <div class="subscribe-wrapper newsletter__subscribe-wrapper">
             <input
               type="email"
@@ -686,7 +690,7 @@
     <footer class="footer">
       <div class="container">
         <div class="footer-wrapper">
-          <a href="#" class="footer-logo footer__logo">
+          <a href="index.html" class="footer-logo footer__logo">
             <svg class="footer-logo__icon">
               <use xlink:href="img/sprite.svg#vertical-logo"></use>
             </svg>
@@ -853,7 +857,11 @@
           <!-- /.footer__contact-details -->
           <div class="footer__contact-form">
             <h3 class="footer__title footer__form-title">Send us a message</h3>
-            <form class="footer__form send-form">
+            <form
+              action="send.php"
+              method="POST"
+              class="footer__form send-form"
+            >
               <input
                 type="text"
                 class="input footer__input"
@@ -910,7 +918,7 @@
           <span class="modal__close-line"></span>
         </button>
         <h3 class="modal__title">Booking</h3>
-        <form class="modal__form send-form">
+        <form action="send.php" method="POST" class="modal__form send-form">
           <input
             type="text"
             class="input modal__input"

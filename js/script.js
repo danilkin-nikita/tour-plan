@@ -79,65 +79,6 @@ const init = () => {
 //Инициализация карты
 ymaps.ready(init);
 
-//Отправка формы
-const sendForm = () => {
-  const statusMessage = document.createElement("div"),
-    modalOverlay = document.querySelector(".modal__overlay"),
-    modalDialog = document.querySelector(".modal__dialog");
-
-  const resetForm = () => {
-    setTimeout(() => {
-      statusMessage.remove();
-    }, 3000);
-    if (modalDialog.classList.contains("modal__dialog--visible")) {
-      setTimeout(() => {
-        modalOverlay.classList.remove("modal__overlay--visible");
-        modalDialog.classList.remove("modal__dialog--visible");
-        document.body.classList.remove("scroll-menu");
-      }, 7000);
-    }
-  };
-
-  document.addEventListener("submit", (event) => {
-    event.preventDefault();
-    const target = event.target;
-
-    if (target.matches(".send-form")) {
-      const formData = new FormData(target);
-
-      target.appendChild(statusMessage);
-      statusMessage.classList.add("send__status");
-      statusMessage.innerHTML = `<img class="send__preloader" src="./img/loading.svg">`;
-
-      postData(formData)
-        .then((response) => {
-          if (response.status !== 200) {
-            throw new Error("status network not 200");
-          }
-          statusMessage.textContent =
-            "Message sent! Our manager will call you back in 5 minutes.";
-          resetForm();
-        })
-        .catch((error) => {
-          console.error(error);
-          statusMessage.textContent = "Something went wrong...";
-          resetForm();
-        });
-      target.reset();
-    }
-  });
-
-  const postData = (formData) => {
-    return fetch("./send.php", {
-      method: "POST",
-      body: formData,
-      action: "./send.php",
-    });
-  };
-};
-
-sendForm();
-
 // Создание параллакс эффекта для блока newsletter
 $(".newsletter").parallax({
   imageSrc: "img/newsletter/newsletter-bg.jpeg",
