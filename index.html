@@ -33,7 +33,7 @@
               class="search__input"
               placeholder="Search Location"
             />
-            <button class="search__button button">
+            <button class="search__button">
               <svg class="search__icon">
                 <use xlink:href="img/sprite.svg#search"></use>
               </svg>
@@ -81,7 +81,7 @@
                   class="search__input"
                   placeholder="Search Location"
                 />
-                <button class="search__button button">
+                <button class="search__button">
                   <svg class="search__icon">
                     <use xlink:href="img/sprite.svg#search"></use>
                   </svg>
@@ -248,7 +248,7 @@
                 </a>
               </div>
               <!-- /.booking__call-center -->
-              <button class="button booking__button button">
+              <button class="booking__button" data-toggle="modal">
                 View Other Options
               </button>
             </div>
@@ -316,9 +316,7 @@
               <div class="packages-card__old-cost">$ 10,500</div>
               <span class="packages-card__wrapper"
                 ><span class="packages-card__cost">$ 8,500</span
-                ><button class="packages-card__button button">
-                  Book Now
-                </button></span
+                ><button class="packages-card__button">Book Now</button></span
               >
             </div>
             <!-- /.packages-card__info card-info -->
@@ -358,9 +356,7 @@
               <div class="packages-card__old-cost">$ 8,500</div>
               <span class="packages-card__wrapper"
                 ><span class="packages-card__cost">$ 3,000</span
-                ><button class="packages-card__button button">
-                  Book Now
-                </button></span
+                ><button class="packages-card__button">Book Now</button></span
               >
             </div>
             <!-- /.packages-card__info card-info -->
@@ -400,9 +396,7 @@
               <div class="packages-card__old-cost">$ 10,500</div>
               <span class="packages-card__wrapper"
                 ><span class="packages-card__cost">$ 9,500</span
-                ><button class="packages-card__button button">
-                  Book Now
-                </button></span
+                ><button class="packages-card__button">Book Now</button></span
               >
             </div>
             <!-- /.packages-card__info card-info -->
@@ -442,9 +436,7 @@
               <div class="packages-card__old-cost">$ 4,500</div>
               <span class="packages-card__wrapper"
                 ><span class="packages-card__cost">$ 2,500</span
-                ><button class="packages-card__button button">
-                  Book Now
-                </button></span
+                ><button class="packages-card__button">Book Now</button></span
               >
             </div>
             <!-- /.packages-card__info card-info -->
@@ -484,9 +476,7 @@
               <div class="packages-card__old-cost">$ 6,500</div>
               <span class="packages-card__wrapper"
                 ><span class="packages-card__cost">$ 3,500</span
-                ><button class="packages-card__button button">
-                  Book Now
-                </button></span
+                ><button class="packages-card__button">Book Now</button></span
               >
             </div>
             <!-- /.packages-card__info card-info -->
@@ -503,16 +493,16 @@
           subscribe to our
           <span class="newsletter-title__strong">Newsletter</span>
         </h2>
-        <form class="subscribe newsletter__subscribe">
+        <form class="subscribe newsletter__subscribe send-form">
           <div class="subscribe-wrapper newsletter__subscribe-wrapper">
             <input
-            type="email"
-            class="subscribe__input"
-            placeholder="Your email address"
-            name="email"
-            required
-          />
-          <button class="subscribe__button button">Send</button>
+              type="email"
+              class="subscribe__input"
+              placeholder="Your email address"
+              name="email"
+              required
+            />
+            <button class="subscribe__button">Send</button>
           </div>
           <!-- /.subscribe-wrapper newsletter__subscribe-wrapper -->
         </form>
@@ -644,7 +634,7 @@
             />
             <div class="card__wrapper">
               <h3 class="card__title">The curious corner of chamarel</h3>
-              <button class="card__button button">Book Now</button>
+              <button class="card__button">Book Now</button>
             </div>
             <!-- /.card__wrapper -->
           </div>
@@ -657,7 +647,7 @@
             />
             <div class="card__wrapper">
               <h3 class="card__title">Gymkhana club golf course</h3>
-              <button class="card__button button">Book Now</button>
+              <button class="card__button">Book Now</button>
             </div>
             <!-- /.card__wrapper -->
           </div>
@@ -670,7 +660,7 @@
             />
             <div class="card__wrapper">
               <h3 class="card__title">Tamarind falls hiking trip - full day</h3>
-              <button class="card__button button">Book Now</button>
+              <button class="card__button">Book Now</button>
             </div>
             <!-- /.card__wrapper -->
           </div>
@@ -683,7 +673,7 @@
             />
             <div class="card__wrapper">
               <h3 class="card__title">The blue marine discovery quest</h3>
-              <button class="card__button button">Book Now</button>
+              <button class="card__button">Book Now</button>
             </div>
             <!-- /.card__wrapper -->
           </div>
@@ -863,7 +853,7 @@
           <!-- /.footer__contact-details -->
           <div class="footer__contact-form">
             <h3 class="footer__title footer__form-title">Send us a message</h3>
-            <form class="footer__form">
+            <form class="footer__form send-form">
               <input
                 type="text"
                 class="input footer__input"
@@ -879,7 +869,7 @@
                 required
               />
               <textarea
-                class="footer__message"
+                class="footer__message message"
                 placeholder="Message"
                 name="message"
               ></textarea>
@@ -912,6 +902,51 @@
       </div>
       <!-- /.container -->
     </footer>
+    <div class="modal">
+      <div class="modal__overlay"></div>
+      <!-- /.modal__overlay -->
+      <div class="modal__dialog">
+        <button class="modal__close">
+          <span class="modal__close-line"></span>
+        </button>
+        <h3 class="modal__title">Booking</h3>
+        <form class="modal__form send-form">
+          <input
+            type="text"
+            class="input modal__input"
+            placeholder="Your Full Name*"
+            name="name"
+            required
+          />
+          <input
+            type="text"
+            class="input modal__input"
+            placeholder="Phone Number*"
+            name="phone"
+            required
+          />
+          <input
+            type="email"
+            class="input modal__input"
+            placeholder="Email*"
+            name="email"
+            required
+          />
+          <textarea
+            class="modal__message message"
+            placeholder="Message"
+            name="message"
+          ></textarea>
+          <div class="modal-wrapper">
+            <button class="button modal__button" type="submit">Send</button>
+            <span class="modal__info">* Required Fields</span>
+          </div>
+          <!-- /.modal-wrapper -->
+        </form>
+      </div>
+      <!-- /.modal__dialog -->
+    </div>
+    <!-- /.modal -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="js/parallax.min.js"></script>
     <script src="js/swiper-bundle.min.js"></script>

@@ -11,7 +11,16 @@ $message = $_POST['message'];
 $email = $_POST['email'];
 
 // Формирование самого письма
-if (isset($email)) {
+if (isset($name) and isset($phone) and isset($message) and isset($email)) {
+    $title = "Новое обращение Best Tour Plan";
+    $body = "
+    <h2>Новое обращение</h2>
+    <b>Имя:</b> $name<br>
+    <b>Телефон:</b> $phone<br>
+    <b>Email:</b> $email<br><br>
+    <b>Сообщение:</b><br>$message
+    ";
+} else if (isset($email)) {
     $title = "Новая подписка на рассылку";
     $body = "
     <h2>Подписка</h2>
@@ -38,11 +47,11 @@ try {
 
     // Настройки вашей почты
     $mail->Host       = 'smtp.gmail.com'; // SMTP сервера вашей почты
-    $mail->Username   = ''; // Логин на почте
-    $mail->Password   = ''; // Пароль на почте
+    $mail->Username   = 'testsendmessage531@gmail.com'; // Логин на почте
+    $mail->Password   = '3asdads32345345xczv'; // Пароль на почте
     $mail->SMTPSecure = 'ssl';
     $mail->Port       = 465;
-    $mail->setFrom('', ''); // Адрес самой почты и имя отправителя
+    $mail->setFrom('testsendmessage531@gmail.com', 'Иван Иванов'); // Адрес самой почты и имя отправителя
 
     // Получатель письма
     $mail->addAddress('ni.danilkin@gmail.com');  

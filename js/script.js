@@ -1,6 +1,6 @@
 "use sctrict";
 // Скрипт для мобильного меню
-const mobileMenu = () => {
+const toogleMobileMenu = () => {
   let menuButton = document.querySelector(".menu-button"),
     navbarMenu = document.querySelector(".navbar-menu");
 
@@ -11,7 +11,7 @@ const mobileMenu = () => {
   });
 };
 
-mobileMenu();
+toogleMobileMenu();
 
 // Инициализация слайдеров
 const initSliders = () => {
@@ -81,13 +81,28 @@ ymaps.ready(init);
 
 //Отправка формы
 const sendForm = () => {
-  const statusMessage = document.createElement("div");
+  const statusMessage = document.createElement("div"),
+    modalOverlay = document.querySelector(".modal__overlay"),
+    modalDialog = document.querySelector(".modal__dialog");
+
+  const resetForm = () => {
+    setTimeout(() => {
+      statusMessage.remove();
+    }, 3000);
+    if (modalDialog.classList.contains("modal__dialog--visible")) {
+      setTimeout(() => {
+        modalOverlay.classList.remove("modal__overlay--visible");
+        modalDialog.classList.remove("modal__dialog--visible");
+        document.body.classList.remove("scroll-menu");
+      }, 7000);
+    }
+  };
 
   document.addEventListener("submit", (event) => {
     event.preventDefault();
     const target = event.target;
 
-    if (target.matches("form")) {
+    if (target.matches(".send-form")) {
       const formData = new FormData(target);
 
       target.appendChild(statusMessage);
@@ -101,16 +116,12 @@ const sendForm = () => {
           }
           statusMessage.textContent =
             "Message sent! Our manager will call you back in 5 minutes.";
-          setTimeout(() => {
-            statusMessage.remove();
-          }, 3000);
+          resetForm();
         })
         .catch((error) => {
           console.error(error);
           statusMessage.textContent = "Something went wrong...";
-          setTimeout(() => {
-            statusMessage.remove();
-          }, 3000);
+          resetForm();
         });
       target.reset();
     }
@@ -132,3 +143,44 @@ $(".newsletter").parallax({
   imageSrc: "img/newsletter/newsletter-bg.jpeg",
   speed: 0.4,
 });
+
+// Открытие модального окна
+const toogleModal = () => {
+  const modalOverlay = document.querySelector(".modal__overlay"),
+    modalDialog = document.querySelector(".modal__dialog");
+
+  const openModal = () => {
+    modalOverlay.classList.add("modal__overlay--visible");
+    modalDialog.classList.add("modal__dialog--visible");
+    document.body.classList.add("scroll-menu");
+  };
+
+  const closeModal = () => {
+    modalOverlay.classList.remove("modal__overlay--visible");
+    modalDialog.classList.remove("modal__dialog--visible");
+    document.body.classList.remove("scroll-menu");
+  };
+
+  document.addEventListener("click", (event) => {
+    let target = event.target;
+
+    if (target.matches('button[data-toggle="modal"]')) {
+      openModal();
+    }
+
+    if (target.closest(".modal__close") || target.matches(".modal__overlay")) {
+      closeModal();
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (
+      event.keyCode === 27 &&
+      modalDialog.classList.contains("modal__dialog--visible")
+    ) {
+      closeModal();
+    }
+  });
+};
+
+toogleModal();

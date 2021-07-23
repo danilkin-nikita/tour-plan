@@ -184,6 +184,9 @@
   .inst-icon
     &:hover
       fill: $footer-text-color
+  .modal
+    &__dialog
+      padding: 22px 55px
 @media (max-width: 768px)
   .navbar
     &__search
@@ -371,6 +374,18 @@
           font-size: 13px
         &__features
           margin-bottom: 42px
+  .modal
+    &__dialog
+      padding: 15px 30px
+      max-width: 90%
+      width: 400px
+    &-wrapper
+      flex-direction: column
+      align-items: start
+    &__button
+      order: 1
+    &__info
+      margin-bottom: 15px
 @media (max-width: 610px)
   body
     padding-top: 70px
