@@ -1980,6 +1980,7 @@ input:focus {
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   max-width: 478px;
+  max-height: 100%;
   padding: 33px 88px;
   background-color: #0A223D;
   color: #fff;
@@ -2422,7 +2423,7 @@ input:focus {
   .navbar-menu__link:hover {
     color: #fff;
   }
-  .navbar__mobile--fixed {
+  .navbar--fixed {
     position: fixed;
     left: 0;
     right: 0;
@@ -2624,7 +2625,7 @@ input:focus {
     margin-bottom: 42px;
   }
   .modal__dialog {
-    padding: 15px 30px;
+    padding: 30px 40px;
     max-width: 90%;
     width: 400px;
   }

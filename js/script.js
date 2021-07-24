@@ -93,13 +93,11 @@ const toogleModal = () => {
   const openModal = () => {
     modalOverlay.classList.add("modal__overlay--visible");
     modalDialog.classList.add("modal__dialog--visible");
-    document.body.classList.add("scroll-menu");
   };
 
   const closeModal = () => {
     modalOverlay.classList.remove("modal__overlay--visible");
     modalDialog.classList.remove("modal__dialog--visible");
-    document.body.classList.remove("scroll-menu");
   };
 
   document.addEventListener("click", (event) => {
