@@ -12,6 +12,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/aos.css" />
     <link rel="stylesheet" href="css/style.css" />
     <script src="https://api-maps.yandex.ru/2.1/?apikey=81bbff24-8a86-46e5-b800-3c74b9d93283&lang=ru_RU"></script>
   </head>
@@ -132,7 +133,12 @@
     <section class="hotel">
       <div class="container">
         <div class="hotel-info">
-          <div class="hotel-info__text">
+          <div
+            class="hotel-info__text"
+            data-aos="fade-right"
+            data-aos-delay="50"
+            data-aos-duration="600"
+          >
             <div class="hotel-wrapper">
               <div class="stars hotel-info__stars">
                 <svg class="stars-icon">
@@ -149,7 +155,12 @@
             </p>
           </div>
           <!-- /.hotel-info__text -->
-          <div class="rating hotel-info__rating">
+          <div
+            class="rating hotel-info__rating"
+            data-aos="fade-left"
+            data-aos-delay="50"
+            data-aos-duration="600"
+          >
             <span class="rating__text">User Rattings</span>
             <span class="rating__counter">4.5/</span>
           </div>
@@ -157,7 +168,12 @@
         </div>
         <!-- /.hotel-info -->
         <div class="hotel-grid">
-          <div class="swiper-container hotel-slider hotel__slider">
+          <div
+            class="swiper-container hotel-slider hotel__slider"
+            data-aos="fade-right"
+            data-aos-delay="50"
+            data-aos-duration="600"
+          >
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
               <!-- Slides -->
@@ -213,7 +229,12 @@
 
           <!-- /.slider -->
           <div class="hotel-right">
-            <div class="booking hotel-right__booking">
+            <div
+              class="booking hotel-right__booking"
+              data-aos="fade-left"
+              data-aos-delay="100"
+              data-aos-duration="600"
+            >
               <div class="booking__info">
                 <div class="booking__price">
                   <span class="booking__start">price starts as</span>
@@ -253,7 +274,13 @@
               </button>
             </div>
             <!-- /.booking -->
-            <div class="map" id="map"></div>
+            <div
+              class="map"
+              id="map"
+              data-aos="fade-left"
+              data-aos-delay="50"
+              data-aos-duration="600"
+            ></div>
             <!-- /.map -->
           </div>
           <!-- /.hotel-right -->
@@ -266,7 +293,12 @@
       <div class="container">
         <h2 class="packages-title packages__title">Other Packages</h2>
         <div class="packages__grid-container">
-          <div class="packages-card packages-card-extended">
+          <div
+            class="packages-card packages-card-extended"
+            data-aos="fade-up"
+            data-aos-delay="100"
+            data-aos-duration="800"
+          >
             <img
               src="img/packages/hotel-1.jpeg"
               alt="Hotel"
@@ -324,7 +356,12 @@
             <!-- /.packages-card__info card-info -->
           </div>
           <!-- /.packages-card -->
-          <div class="packages-card">
+          <div
+            class="packages-card"
+            data-aos="fade-up"
+            data-aos-delay="300"
+            data-aos-duration="800"
+          >
             <img
               src="img/packages/hotel-2.jpeg"
               alt="Hotel"
@@ -366,7 +403,12 @@
             <!-- /.packages-card__info card-info -->
           </div>
           <!-- /.packages-card -->
-          <div class="packages-card">
+          <div
+            class="packages-card"
+            data-aos="fade-up"
+            data-aos-delay="100"
+            data-aos-duration="800"
+          >
             <img
               src="img/packages/hotel-3.jpeg"
               alt="Hotel"
@@ -408,7 +450,12 @@
             <!-- /.packages-card__info card-info -->
           </div>
           <!-- /.packages-card -->
-          <div class="packages-card">
+          <div
+            class="packages-card"
+            data-aos="fade-up"
+            data-aos-delay="300"
+            data-aos-duration="800"
+          >
             <img
               src="img/packages/hotel-4.jpeg"
               alt="Hotel"
@@ -450,7 +497,12 @@
             <!-- /.packages-card__info card-info -->
           </div>
           <!-- /.packages-card -->
-          <div class="packages-card">
+          <div
+            class="packages-card"
+            data-aos="fade-up"
+            data-aos-delay="500"
+            data-aos-duration="800"
+          >
             <img
               src="img/packages/hotel-5.jpeg"
               alt="Hotel"
@@ -499,11 +551,19 @@
     </section>
     <section class="newsletter">
       <div class="newsletter-wrapper container">
-        <h2 class="newsletter-title newsletter__title">
+        <h2
+          class="newsletter-title newsletter__title"
+          data-aos="fade-right"
+          data-aos-delay="50"
+          data-aos-duration="800"
+        >
           subscribe to our
           <span class="newsletter-title__strong">Newsletter</span>
         </h2>
         <form
+          data-aos="fade-left"
+          data-aos-delay="50"
+          data-aos-duration="800"
           action="send.php"
           method="POST"
           class="subscribe newsletter__subscribe send-form"
@@ -640,7 +700,12 @@
       <div class="container">
         <h2 class="activities__title">Other Activities</h2>
         <div class="activities-wrapper">
-          <div class="card activities__card">
+          <div
+            class="card activities__card"
+            data-aos="fade-up"
+            data-aos-delay="100"
+            data-aos-duration="800"
+          >
             <img
               src="img/activities/card-bg-1.jpg"
               alt="The curious corner of chamarel"
@@ -653,7 +718,12 @@
             <!-- /.card__wrapper -->
           </div>
           <!-- /.card -->
-          <div class="card activities__card">
+          <div
+            class="card activities__card"
+            data-aos="fade-up"
+            data-aos-delay="300"
+            data-aos-duration="800"
+          >
             <img
               src="img/activities/card-bg-2.jpg"
               alt="Gymkhana club golf course"
@@ -666,7 +736,12 @@
             <!-- /.card__wrapper -->
           </div>
           <!-- /.card -->
-          <div class="card activities__card">
+          <div
+            class="card activities__card"
+            data-aos="fade-up"
+            data-aos-delay="500"
+            data-aos-duration="800"
+          >
             <img
               src="img/activities/card-bg-3.jpg"
               alt="Tamarind falls hiking trip - full day"
@@ -679,7 +754,12 @@
             <!-- /.card__wrapper -->
           </div>
           <!-- /.card -->
-          <div class="card activities__card">
+          <div
+            class="card activities__card"
+            data-aos="fade-up"
+            data-aos-delay="700"
+            data-aos-duration="800"
+          >
             <img
               src="img/activities/card-bg-4.jpg"
               alt="The blue marine discovery quest"
@@ -872,20 +952,25 @@
               method="POST"
               class="footer__form send-form"
             >
-              <input
-                type="text"
-                class="input footer__input"
-                placeholder="Your Full Name*"
-                name="name"
-                required
-              />
-              <input
-                type="text"
-                class="input footer__input"
-                placeholder="Phone Number*"
-                name="phone"
-                required
-              />
+              <div class="footer__input-group">
+                <input
+                  type="text"
+                  class="input footer__input"
+                  placeholder="Your Full Name*"
+                  name="name"
+                  minlength="2"
+                  required
+                />
+              </div>
+              <div class="footer__input-group">
+                <input
+                  type="tel"
+                  class="input footer__input"
+                  placeholder="Phone Number*"
+                  name="phone"
+                  required
+                />
+              </div>
               <textarea
                 class="footer__message message"
                 placeholder="Message"
@@ -929,27 +1014,35 @@
         </button>
         <h3 class="modal__title">Booking</h3>
         <form action="send.php" method="POST" class="modal__form send-form">
-          <input
-            type="text"
-            class="input modal__input"
-            placeholder="Your Full Name*"
-            name="name"
-            required
-          />
-          <input
-            type="text"
-            class="input modal__input"
-            placeholder="Phone Number*"
-            name="phone"
-            required
-          />
-          <input
-            type="email"
-            class="input modal__input"
-            placeholder="Email*"
-            name="email"
-            required
-          />
+          <div class="modal__input-group">
+            <input
+              type="text"
+              class="input modal__input"
+              placeholder="Your Full Name*"
+              name="name"
+              minlength="2"
+              required
+            />
+          </div>
+          <div class="modal__input-group">
+            <input
+              type="tel"
+              class="input modal__input"
+              placeholder="Phone Number*"
+              name="phone"
+              required
+            />
+          </div>
+          <div class="modal__input-group">
+            <input
+              type="email"
+              class="input modal__input"
+              placeholder="Email*"
+              name="email"
+              required
+            />
+          </div>
+
           <textarea
             class="modal__message message"
             placeholder="Message"
@@ -965,9 +1058,12 @@
       <!-- /.modal__dialog -->
     </div>
     <!-- /.modal -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/jquery.mask.js"></script>
     <script src="js/parallax.min.js"></script>
     <script src="js/swiper-bundle.min.js"></script>
+    <script src="js/aos.js"></script>
     <script src="js/script.js"></script>
   </body>
 </html>

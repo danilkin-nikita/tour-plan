@@ -79,12 +79,6 @@ const init = () => {
 //Инициализация карты
 ymaps.ready(init);
 
-// Создание параллакс эффекта для блока newsletter
-$(".newsletter").parallax({
-  imageSrc: "img/newsletter/newsletter-bg.jpeg",
-  speed: 0.4,
-});
-
 // Открытие модального окна
 const toogleModal = () => {
   const modalOverlay = document.querySelector(".modal__overlay"),
@@ -123,3 +117,39 @@ const toogleModal = () => {
 };
 
 toogleModal();
+
+// Создание параллакс эффекта для блока newsletter
+$(".newsletter").parallax({
+  imageSrc: "img/newsletter/newsletter-bg.jpeg",
+  speed: 0.4,
+});
+
+//Валидация форм
+$(".send-form").each(function () {
+  $(this).validate({
+    errorClass: "invalid",
+    messages: {
+      name: {
+        required: "Please specify your name",
+        minlength: "Name must be at least 2 letters",
+      },
+      email: {
+        required: "We need your email address to contact you",
+        email: "Your email address must be in the format of name@domain.com",
+      },
+      phone: {
+        required: "Please enter your phone number",
+      },
+    },
+  });
+});
+
+//Подключение маски для телефона
+$(".input[name=phone]").mask("+7 (000) 000-00-00");
+
+AOS.init({
+  disable: function () {
+    var maxWidth = 1000;
+    return window.innerWidth < maxWidth;
+  },
+});

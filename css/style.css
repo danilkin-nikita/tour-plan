@@ -453,6 +453,20 @@ input:focus {
   transition: 0.3s;
 }
 
+input.invalid, input.invalid:focus {
+  -webkit-box-shadow: 0px 0px 6px 3px rgba(213, 6, 6, 0.61) inset;
+  moz-box-shadow: 0px 0px 6px 3px rgba(213, 6, 6, 0.61) inset;
+  box-shadow: 0px 0px 6px 3px rgba(213, 6, 6, 0.61) inset;
+}
+
+label.invalid {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  color: #EC1F46;
+  font-size: 12px;
+}
+
 .navbar {
   background-color: #fff;
 }
@@ -627,6 +641,7 @@ input:focus {
 }
 
 .user__name {
+  position: relative;
   margin-left: 18px;
   font-size: 14px;
   line-height: 18px;
@@ -637,7 +652,12 @@ input:focus {
 
 .user__name::after {
   content: '';
-  display: block;
+  position: absolute;
+  top: 30px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
   height: 1px;
   background-color: #333333;
   -webkit-transition: 0.5s;
@@ -1331,11 +1351,16 @@ input:focus {
   width: 350px;
   height: 55px;
   border-radius: 4px;
-  overflow: hidden;
+}
+
+.subscribe-wrapper label.invalid {
+  top: 60px;
+  font-weight: bold;
+  font-size: 14px;
 }
 
 .subscribe__input {
-  position: absolute;
+  position: relative;
   width: 100%;
   height: 100%;
   border: none;
@@ -1344,6 +1369,7 @@ input:focus {
   font-weight: 300;
   font-size: 14px;
   line-height: 18px;
+  overflow: hidden;
   -webkit-transition: .17s linear;
   transition: .17s linear;
 }
@@ -1855,6 +1881,11 @@ input:focus {
 }
 
 .footer__input {
+  width: 100%;
+}
+
+.footer__input-group {
+  position: relative;
   line-height: 15px;
   margin-bottom: 15px;
   -ms-flex-preferred-size: 47%;
@@ -1979,6 +2010,7 @@ input:focus {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+  min-width: 478px;
   max-width: 478px;
   max-height: 100%;
   padding: 33px 88px;
@@ -2033,6 +2065,17 @@ input:focus {
           transform: rotate(38deg);
 }
 
+.modal__close:hover {
+  -webkit-animation-name: reversal;
+          animation-name: reversal;
+  -webkit-animation-duration: 0.3s;
+          animation-duration: 0.3s;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+  -webkit-animation: reversal 0.3s easy;
+          animation: reversal 0.3s easy;
+}
+
 .modal__close:hover .modal__close-line:after, .modal__close:hover .modal__close-line:before {
   background-color: #EC1F46;
 }
@@ -2049,6 +2092,10 @@ input:focus {
 
 .modal__input {
   width: 100%;
+}
+
+.modal__input-group {
+  position: relative;
   margin-bottom: 15px;
 }
 
@@ -2075,6 +2122,28 @@ input:focus {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+@-webkit-keyframes reversal {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+}
+
+@keyframes reversal {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
 }
 
 .send-message__wrapper {
@@ -2628,6 +2697,7 @@ input:focus {
     padding: 30px 40px;
     max-width: 90%;
     width: 400px;
+    min-width: auto;
   }
   .modal-wrapper {
     -webkit-box-orient: vertical;
@@ -2837,7 +2907,7 @@ input:focus {
   .footer__privacy-item {
     margin-right: 8px;
   }
-  .footer__input {
+  .footer__input-group {
     -ms-flex-preferred-size: 100%;
         flex-basis: 100%;
   }
