@@ -77,7 +77,9 @@ const init = () => {
 };
 
 //Инициализация карты
-ymaps.ready(init);
+if (document.querySelector(".map")) {
+  ymaps.ready(init);
+}
 
 // Открытие модального окна
 const toogleModal = () => {
@@ -134,11 +136,12 @@ $(".send-form").each(function () {
         minlength: "Name must be at least 2 letters",
       },
       email: {
-        required: "We need your email address to contact you",
-        email: "Your email address must be in the format of name@domain.com",
+        required: "Please enter your email",
+        email: "Email format: name@domain.com",
       },
       phone: {
         required: "Please enter your phone number",
+        minlength: "Please enter the full phone number",
       },
     },
   });
@@ -149,7 +152,18 @@ $(".input[name=phone]").mask("+7 (000) 000-00-00");
 
 AOS.init({
   disable: function () {
-    var maxWidth = 1000;
+    let maxWidth = 1000;
     return window.innerWidth < maxWidth;
   },
+});
+
+window.addEventListener("resize", () => {
+  if (window.innerWidth < 1000) {
+    AOS.init({
+      disable: function () {
+        let maxWidth = 1000;
+        return window.innerWidth < maxWidth;
+      },
+    });
+  }
 });

@@ -465,6 +465,7 @@ label.invalid {
   left: 0;
   color: #EC1F46;
   font-size: 12px;
+  font-weight: bold;
 }
 
 .navbar {
@@ -1240,6 +1241,7 @@ label.invalid {
   font-size: 14px;
   line-height: 19px;
   border: none;
+  border-radius: 4px;
   cursor: pointer;
   -webkit-transition: 0.3s;
   transition: 0.3s;
@@ -1355,8 +1357,8 @@ label.invalid {
 
 .subscribe-wrapper label.invalid {
   top: 60px;
-  font-weight: bold;
   font-size: 14px;
+  font-weight: bold;
 }
 
 .subscribe__input {
@@ -1403,6 +1405,7 @@ label.invalid {
   min-width: 65px;
   height: 100%;
   border: none;
+  border-radius: 0 4px 4px 0;
   background-color: #EC1F46;
   color: #fff;
   font-size: 12px;

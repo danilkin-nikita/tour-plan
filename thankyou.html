@@ -11,9 +11,8 @@
       href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;600;700&family=Nunito:wght@400;600;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/aos.css" />
     <link rel="stylesheet" href="css/style.css" />
-    <script src="https://api-maps.yandex.ru/2.1/?apikey=81bbff24-8a86-46e5-b800-3c74b9d93283&lang=ru_RU"></script>
   </head>
   <body>
     <header class="navbar navbar--fixed">
@@ -131,7 +130,12 @@
     <!-- /.breadcrumb -->
     <section class="send-message">
       <div class="container">
-        <div class="send-message__wrapper">
+        <div
+          class="send-message__wrapper"
+          data-aos="fade-right"
+          data-aos-delay="50"
+          data-aos-duration="600"
+        >
           <h1 class="send-message__title">Message sent!</h1>
           <p class="send-message__text">
             Our manager will call you back in 5 minutes.
@@ -312,21 +316,31 @@
           <!-- /.footer__contact-details -->
           <div class="footer__contact-form">
             <h3 class="footer__title footer__form-title">Send us a message</h3>
-            <form class="footer__form send-form">
-              <input
-                type="text"
-                class="input footer__input"
-                placeholder="Your Full Name*"
-                name="name"
-                required
-              />
-              <input
-                type="text"
-                class="input footer__input"
-                placeholder="Phone Number*"
-                name="phone"
-                required
-              />
+            <form
+              action="send.php"
+              method="POST"
+              class="footer__form send-form"
+            >
+              <div class="footer__input-group">
+                <input
+                  type="text"
+                  class="input footer__input"
+                  placeholder="Your Full Name*"
+                  name="name"
+                  minlength="2"
+                  required
+                />
+              </div>
+              <div class="footer__input-group">
+                <input
+                  type="tel"
+                  class="input footer__input"
+                  placeholder="Phone Number*"
+                  name="phone"
+                  minlength="18"
+                  required
+                />
+              </div>
               <textarea
                 class="footer__message message"
                 placeholder="Message"
@@ -361,5 +375,12 @@
       </div>
       <!-- /.container -->
     </footer>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/jquery.mask.js"></script>
+    <script src="js/parallax.min.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/script.js"></script>
   </body>
 </html>
