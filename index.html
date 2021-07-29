@@ -7,14 +7,8 @@
     <title>Best Tour Plan - Hotel Booking</title>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="preload"
-      href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;600;700&family=Nunito:wght@400;600;800&display=swap"
-    />
     <link rel="stylesheet" href="css/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="css/aos.css" />
+    <link rel="stylesheet" href="css/aos.css" media="screen and (min-width: 992px)"/>
     <link rel="stylesheet" href="css/style.min.css" />
   </head>
   <body>
@@ -179,39 +173,49 @@
             <div class="swiper-wrapper">
               <!-- Slides -->
               <div class="swiper-slide hotel-slider__slide">
-                <img
-                  class="hotel-slider__img"
+                <picture >
+                  <source class="hotel-slider__img" srcset="img/hotel/slide-1.webp" media="(max-width: 992px)">
+                  <img class="hotel-slider__img"
                   src="img/hotel/slide-1.jpg"
                   alt="Slide 1"
                 />
+                </picture>
               </div>
               <div class="swiper-slide hotel-slider__slide">
-                <img
-                  class="hotel-slider__img"
+               <picture>
+                  <source class="hotel-slider__img" srcset="img/hotel/slide-2.webp" media="(max-width: 992px)">
+                  <img class="hotel-slider__img"
                   src="img/hotel/slide-2.jpg"
                   alt="Slide 2"
                 />
+                </picture>
               </div>
               <div class="swiper-slide hotel-slider__slide">
-                <img
-                  class="hotel-slider__img"
+                <picture >
+                  <source class="hotel-slider__img" srcset="img/hotel/slide-3.webp" media="(max-width: 992px)">
+                  <img class="hotel-slider__img"
                   src="img/hotel/slide-3.jpg"
                   alt="Slide 3"
                 />
+                </picture>
               </div>
               <div class="swiper-slide hotel-slider__slide">
-                <img
-                  class="hotel-slider__img"
+                <picture >
+                  <source class="hotel-slider__img" srcset="img/hotel/slide-4.webp" media="(max-width: 992px)">
+                  <img class="hotel-slider__img"
                   src="img/hotel/slide-4.jpg"
                   alt="Slide 4"
                 />
+                </picture>
               </div>
               <div class="swiactivities/per-slide hotel-slider__slide">
-                <img
-                  class="hotel-slider__img"
+                <picture >
+                  <source class="hotel-slider__img" srcset="img/hotel/slide-5.webp" media="(max-width: 992px)">
+                  <img class="hotel-slider__img"
                   src="img/hotel/slide-5.jpg"
                   alt="Slide 5"
                 />
+                </picture>
               </div>
             </div>
             <!-- If we need navigation buttons -->
@@ -281,7 +285,10 @@
               data-aos="fade-left"
               data-aos-delay="50"
               data-aos-duration="600"
-            ></div>
+            >
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2350.194649536823!2d98.29881640084254!3d7.838355923958824!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x305025650c33dbab%3A0xa67a542329d011e1!2z0J_RhdGD0LrQtdGCLCDQmtCw0YDQvtC9LCDQntGC0LXQu9GMINCl0LjQu9GC0L7QvQ!5e0!3m2!1sru!2sby!4v1627562116765!5m2!1sru!2sby" width="347" height="213" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+              ></iframe>
+            </div>
             <!-- /.map -->
           </div>
           <!-- /.hotel-right -->
@@ -986,22 +993,24 @@
         </div>
         <!-- /.footer-wrapper -->
         <div class="footer__privacy">
-          <ul class="footer__ul footer__privacy-ul">
-            <li class="footer__item footer__privacy-item">
-              <a href="#" class="footer__link">Disclaimer</a>
-            </li>
-            <li class="footer__item footer__privacy-item">
-              <a href="#" class="footer__link">Conditions of use</a>
-            </li>
-            <li class="footer__item footer__privacy-item">
-              <a href="#" class="footer__link">Cancellation policy</a>
-            </li>
-          </ul>
-          <img
-            src="img/footer/payment-systems.png"
-            alt="Payment systems"
-            class="footer__payment-systems"
-          />
+          <div class="footer__privacy-wrapper">
+            <ul class="footer__ul footer__privacy-ul">
+              <li class="footer__item footer__privacy-item">
+                <a href="#" class="footer__link">Disclaimer</a>
+              </li>
+              <li class="footer__item footer__privacy-item">
+                <a href="#" class="footer__link">Conditions of use</a>
+              </li>
+              <li class="footer__item footer__privacy-item">
+                <a href="#" class="footer__link">Cancellation policy</a>
+              </li>
+            </ul>
+            <img
+              src="img/footer/payment-systems.png"
+              alt="Payment systems"
+              class="footer__payment-systems"
+            />
+          </div>
         </div>
         <!-- /.footer__privacy -->
       </div>
@@ -1061,11 +1070,6 @@
       <!-- /.modal__dialog -->
     </div>
     <!-- /.modal -->
-
-    <script
-      async
-      src="https://api-maps.yandex.ru/2.1/?apikey=81bbff24-8a86-46e5-b800-3c74b9d93283&lang=ru_RU"
-    ></script>
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/jquery.validate.min.js"></script>
     <script src="js/jquery.mask.js"></script>

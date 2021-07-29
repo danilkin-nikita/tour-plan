@@ -45,68 +45,6 @@ window.addEventListener("DOMContentLoaded", () => {
 
   initSliders();
 
-  const init = () => {
-    // Создание карты.
-    let myMap = new ymaps.Map(
-      "map",
-      {
-        center: [7.8381759, 98.29881076],
-        zoom: 17,
-        controls: ["smallMapDefaultSet"],
-      },
-      {
-        // Ограничение области карты
-        restrictMapArea: [
-          [7.86936196, 98.2785118],
-          [7.8028573, 98.31533317],
-        ],
-      }
-    );
-    // Создание точки на карте
-    myMap.geoObjects.add(
-      new ymaps.Placemark(
-        [7.8381759, 98.29881076],
-        {
-          balloonContent: "GRAND HILTON HOTEL",
-          iconCaption: "HILTON",
-        },
-        {
-          preset: "islands#blueCircleDotIconWithCaption",
-          iconCaptionMaxWidth: "50",
-        }
-      )
-    );
-  };
-
-  // Скрипт для загрузки карты по запросу
-  const lazyLoadingMap = () => {
-    let map = document.querySelector(".map");
-    let optionsMap = {
-      once: true,
-      passive: true,
-      capture: true,
-    };
-
-    let mapLoaded = false;
-
-    const startLazyMap = () => {
-      if (!mapLoaded) {
-        mapLoaded = true;
-        ymaps.ready(init);
-      }
-    };
-
-    map.addEventListener("click", startLazyMap, optionsMap);
-    map.addEventListener("mouseover", startLazyMap, optionsMap);
-    map.addEventListener("touchstart", startLazyMap, optionsMap);
-    map.addEventListener("touchmove", startLazyMap, optionsMap);
-  };
-
-  //Инициализация карты
-  if (document.querySelector(".map")) {
-    lazyLoadingMap();
-  }
-
   // Открытие модального окна
   const toogleModal = () => {
     const modalOverlay = document.querySelector(".modal__overlay"),
