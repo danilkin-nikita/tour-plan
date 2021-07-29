@@ -536,11 +536,16 @@
         margin-bottom: 23px
         flex-basis: 100%
     &__privacy
-      flex-wrap: wrap
+      &-wrapper
+        flex-wrap: wrap
       &-ul
         margin-bottom: 10px
+        flex-basis: 100%
+        justify-content: normal
       &-item
-        margin-right: 8px
+        margin-right: 0
+        &:not(:last-child)
+          margin-right: 8px
     &__input
       &-group
         flex-basis: 100%
