@@ -39,6 +39,7 @@
       font-size: 8px
       line-height: 10px
       color: $light
+      z-index: 50
     &:hover
       box-shadow: 0 0 17px rgba(6, 137, 238, 0.31)
       transition: 1s ease-out
@@ -51,6 +52,8 @@
       object-fit: cover
       z-index: -1
       transition: all 0.3s ease-out
+      &-wrapper
+        overflow: hidden
     &__info
       padding: 30px 21px 25px 32px
       background-color: $dark

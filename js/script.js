@@ -1,5 +1,5 @@
 window.addEventListener("DOMContentLoaded", () => {
-  ("use sctrict");
+  "use sctrict";
 
   // Скрипт для мобильного меню
   const toogleMobileMenu = () => {
@@ -122,16 +122,5 @@ window.addEventListener("DOMContentLoaded", () => {
       let maxWidth = 1000;
       return window.innerWidth < maxWidth;
     },
-  });
-
-  window.addEventListener("resize", () => {
-    if (window.innerWidth < 1000) {
-      AOS.init({
-        disable: function () {
-          let maxWidth = 1000;
-          return window.innerWidth < maxWidth;
-        },
-      });
-    }
   });
 });
